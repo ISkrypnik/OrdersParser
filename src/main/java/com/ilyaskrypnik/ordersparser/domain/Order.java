@@ -1,4 +1,4 @@
-package com.ilyaskrypnik.OrdersParser.domain;
+package com.ilyaskrypnik.ordersparser.domain;
 
 import lombok.Data;
 import lombok.NonNull;
@@ -9,6 +9,7 @@ public class Order {
     private final Long id;
     @NonNull
     private final Long Amount;
+
     @NonNull
     private final String currency;
     @NonNull

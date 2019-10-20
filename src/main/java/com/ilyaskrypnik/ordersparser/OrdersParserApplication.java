@@ -1,4 +1,4 @@
-package com.ilyaskrypnik.OrdersParser;
+package com.ilyaskrypnik.ordersparser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
