@@ -8,8 +8,7 @@ public class Order {
     @NonNull
     private final Long id;
     @NonNull
-    private final Long Amount;
-
+    private final Long amount;
     @NonNull
     private final String currency;
     @NonNull
