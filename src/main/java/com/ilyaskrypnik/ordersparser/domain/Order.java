@@ -6,7 +6,7 @@ import lombok.NonNull;
 @Data
 public class Order {
     @NonNull
-    private final Long id;
+    private final Long orderId;
     @NonNull
     private final Long amount;
     @NonNull

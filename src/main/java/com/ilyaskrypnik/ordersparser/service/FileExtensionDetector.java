@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class FileExtensionDetector {
 
     public SupportedFileExtensions getFileExtension(String fileName) throws UnsupportedExtensionException {
-        String fileExtension = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
+        String fileExtension = fileName.substring(fileName.lastIndexOf(".") + 1).toUpperCase();
 
         for (SupportedFileExtensions extension : SupportedFileExtensions.values()) {
             if (fileExtension.equals(extension.name())) {
