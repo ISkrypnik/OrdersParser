@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.ilyaskrypnik.ordersparser.domain.Order;
 import com.ilyaskrypnik.ordersparser.dto.ProcessedOrder;
 import com.ilyaskrypnik.ordersparser.dto.ProcessingData;
+import com.ilyaskrypnik.ordersparser.view.ConsoleView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
@@ -16,12 +17,14 @@ public class Converter {
 
     private static final Logger log = LoggerFactory.getLogger(Converter.class);
 
+    private final ConsoleView consoleView;
     private final ParsedOrderStorage parsedOrderStorage;
     private final ReadStatus readStatus;
 
     private final Gson gson;
 
-    public Converter(ParsedOrderStorage parsedOrderStorage, ReadStatus readStatus) {
+    public Converter(ConsoleView consoleView, ParsedOrderStorage parsedOrderStorage, ReadStatus readStatus) {
+        this.consoleView = consoleView;
         this.parsedOrderStorage = parsedOrderStorage;
         this.readStatus = readStatus;
         this.gson = new Gson();
@@ -45,6 +48,8 @@ public class Converter {
                             .build();
 
                     log.info("Processing order {}", gson.toJson(processedOrder));
+
+                    consoleView.printProcessedOrder(processedOrder);
 
                     if ((readStatus.getAmountOfAllFiles() == readStatus.getAmountOfReadFiles()) &&
                             parsedOrderStorage.isEmpty()) {
