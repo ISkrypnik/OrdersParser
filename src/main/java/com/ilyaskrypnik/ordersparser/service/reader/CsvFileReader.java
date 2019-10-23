@@ -86,7 +86,7 @@ public class CsvFileReader implements OrdersFileReader {
         } catch (ArrayIndexOutOfBoundsException e) {
             result = WRONG_COLUMN_AMOUNT.getDescription();
         } catch (NumberFormatException e) {
-            result = WRONG_NUMBER.getDescription();
+            result = WRONG_NUMBER_FORMAT.getDescription();
         }
 
         parsedOrderStorage.addOrder(new Order(orderId, amount, currency, comment),

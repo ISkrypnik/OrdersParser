@@ -78,7 +78,7 @@ public class JsonFileReader implements OrdersFileReader {
         } catch (FileNotFoundException e) {
             log.error("File '{}' not found.", uri, e);
         } catch (NumberFormatException e) {
-            log.error(WRONG_NUMBER.getDescription(), e);
+            log.error(WRONG_NUMBER_FORMAT.getDescription(), e);
         } catch (Exception e) {
             log.error("An error occurred while reading file {}.", uri, e);
         } finally {
@@ -91,7 +91,7 @@ public class JsonFileReader implements OrdersFileReader {
             return NULL_ORDER_PARAM;
         }
         if (order.getOrderId() == -1 || order.getAmount() == -1) {
-            return WRONG_NUMBER;
+            return WRONG_NUMBER_FORMAT;
         }
         return OK;
     }
