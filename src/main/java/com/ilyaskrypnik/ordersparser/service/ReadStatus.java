@@ -1,27 +1,27 @@
 package com.ilyaskrypnik.ordersparser.service;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Service
+/**
+ * Класс-хранилище статуса чтения файлов.
+ * Хранит в себе общее количество файлов и количество прочитанных файлов.
+ */
+@Component
 public class ReadStatus {
     private AtomicInteger amountOfAllFiles = new AtomicInteger(0);
     private AtomicInteger amountOfReadFiles = new AtomicInteger(0);
-
-    public void incrementAmountOfFiles() {
-        amountOfAllFiles.incrementAndGet();
-    }
 
     public void incrementAmountOfReadFiles() {
         amountOfReadFiles.incrementAndGet();
     }
 
-    public long getAmountOfAllFiles() {
+    long getAmountOfAllFiles() {
         return amountOfAllFiles.longValue();
     }
 
-    public long getAmountOfReadFiles() {
+    long getAmountOfReadFiles() {
         return amountOfReadFiles.longValue();
     }
 

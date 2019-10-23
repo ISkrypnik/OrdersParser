@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+/**
+ * Класс для конвертации объектов Order в ProcessedOrder.
+ * Объекты для конвертации берутся из ParsedOrderStorage
+ */
 @Service
 public class Converter {
 
