@@ -15,3 +15,11 @@ By default logs write to path _C:/logs/application.log_. It can be changed in lo
 
 #### Output
 Output is a DTO in JSON format. For current realisation output prints in console.
+
+#### Build
+Application builds by "mvn clean build" command inside of a project folder. After build JAR file can be found in target
+directory.
+
+#### Run
+Application runs by "java -jar OrdersParser-1.0.jar filename". Last arg is file name. There can be several file names
+to read. Should be listed with a space. 
